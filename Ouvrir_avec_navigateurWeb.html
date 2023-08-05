@@ -1,0 +1,409 @@
+<!-- Veuillez s'il vous plait telecharger ce fichier et l'ouvrir avec un navigateur Web.   -->
+<!-- -----------------------------------------------------------------------------------   -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mon Portefeuille</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #21739b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #0d476e;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .sidebar h1 {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #fff;
+        }
+
+
+        .sidebar h2 {
+            margin: 0;
+            font-size: 18px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-bottom: 1px solid #fff;
+            text-align: center;
+        }
+
+        .sidebar p {
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .sidebar .contact {
+            margin-top: 20px;
+        }
+
+        .sidebar .contact i {
+            margin-right: 10px;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .project {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .project p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .project .description {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .description a i {
+            font-size: 34px;
+            color: #0d476e;
+        }
+
+        .description a {
+            font-size: 14px;
+            color: #111;
+        }
+
+        .project.show .description {
+            display: block;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border: #21739b solid 1px;
+            border-radius: 100px;
+            margin-top: 10px;
+           
+        }
+
+        .zoom-image {
+            transition: transform 0.3s ease;
+            width: 100px;
+            height: 100px;
+        }
+
+        .zoom-image:hover {
+            transform: scale(8.1);
+            border-radius: 5px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            margin: 25px;  
+        }
+        
+        #utils {
+            font-weight:600;
+        }
+
+        .footer {
+            background-color: #21739b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    
+        .toggle-button {
+            background-color: #0d476e;
+            color: #fff;
+            border:#21739b solid 1px;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .toggle-button:hover {
+            background-color: #21739b;
+        }
+
+    </style>
+    <script>
+        function toggleDescription(projectId) {
+            var project = document.getElementById(projectId);
+            project.classList.toggle('show');
+        }
+        function changeHeaderText() {
+            const h1 = document.querySelector(".sidebar h1");
+            h1.innerHTML = '<i class="fas fa-code"></i> El Hadji Falilou Mbacke Niang';
+        }
+        function changeHeaderText2() {
+            const h1 = document.querySelector(".sidebar h1");
+            h1.innerHTML = '<i class="fas fa-code"></i> Gallas';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1> < /Portfolio <i class="far fa-smile-wink" style="font-size:30px;"></i> > </h1>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <aside style="text-align: center;">
+                <h1 onmouseover="changeHeaderText()" onmouseleave="changeHeaderText2()" font-weight: bold; text-align: center;"><i class="fas fa-code"></i> Gallas</h1>
+            </aside>
+            <h2>À propos de moi</h2>
+            <p style="font-style:inherit; text-align: center; font-size:larger;">Ingénieur Logiciel.</p>
+            <p><i class="fa fa-fire" style="font-size: 24px;"></i> Compétences {</p>
+            <p> + Développement Web/Mobile/Desktop</p>
+            <p> + Analyse et Conception</p>
+            <p> + Administration Base de données</p>
+            <p> + Développement applications IA</p>
+            <p> + Devops</p>
+            <p> }</p>
+            <p><i class="fa fa-graduation-cap" style="font-size: 24px;"></i> Formation { Licence en Genie Logiciel }</p>
+            <div class="contact">
+                <p><i class="fas fa-envelope"></i>Email : fniang89@gmail.com</p>
+                <p><i class="fas fa-phone"></i>Téléphone : +221 78 457 66 50</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="project" id="project1">
+                <h2></i> <i class="fas fa-folder-open"></i> E_TAXI</h2>
+                <p>E_Taxi est une plateforme web de reservation de Taxi.</p>
+                <button class="toggle-button" onclick="toggleDescription('project1')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>Dans ce projet on a la possibilité de commander un taxi pour des deplacements. Une carte est integrée pour pouvoir choisir les lieux de depart et d'arrivée. On peut aussi s'identifier comme un chauffeur pour emmener les clients. Il a été realisé avec le framework Laravel.</p>
+                    <p id="utils">Outils = { Blade, PHP, JavaScript, CSS, SCSS, Vite.js, Webpack }</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/E_taxi/raw/main/Capture%20d%E2%80%99%C3%A9cran%202023-03-30%20153401.jpg" alt="capture">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/E_taxi/raw/main/client.jpg" alt="capture">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/E_taxi/raw/main/chauffeur.jpg" alt="capture">
+                    </div>
+                    <a href="https://github.com/gallas-ng/E_taxi" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+            
+            
+            <div class="project" id="project2">
+                <h2><i class="fas fa-folder-open"></i> Hello Food (Projet d'equipe)</h2>
+                <p>Hello Food est une plateforme web de gestion des commandes de restaurant.</p>
+                <button class="toggle-button" onclick="toggleDescription('project2')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>Dans ce projet on a la possibilité de commander des plats à partir du menu. Une fois la commande faite ,le client valide son panier et conclut la commande en ajoutant les informations sur la livraison et ensuite sa facture est envoyée par email. Il a été réalisé avec le framework Laravel.</p>
+                    <p id="utils">Outils = { Blade, PHP, JavaScript, CSS, SCSS, Vite.js}</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://github.com/Saidou-Adama-Ndaye/devoir_semestre_2_laravel/blob/falilou-ft/capture%201.jpg?raw=true" alt="capture">
+                        <img class="zoom-image" src="https://github.com/Saidou-Adama-Ndaye/devoir_semestre_2_laravel/blob/falilou-ft/capture%202.jpg?raw=true" alt="capture">
+                        <img class="zoom-image" src="https://github.com/Saidou-Adama-Ndaye/devoir_semestre_2_laravel/blob/falilou-ft/capture%203.jpg?raw=true" alt="capture">
+                    </div>
+                    <a href="https://github.com/Saidou-Adama-Ndaye/devoir_semestre_2_laravel/tree/falilou-ft" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+            
+            
+            <div class="project" id="project3">
+                <h2><i class="fas fa-folder-open"></i> MedBot</h2>
+                <p>MedBot est un chatbot médicale.</p>
+                <button class="toggle-button" onclick="toggleDescription('project3')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>Ce projet a été realisé dans le but de créer une solution aux problémes thérapeutiques rencontrés dans le domaine de la santé. Cet agent fourni des diagnostics sur les symptomes et maladies pour assister les patients. Il a été réalisé avec le langage Python et ses frameworks.</p>
+                    <p id="utils">Outils = { Python, Streamlit, Langchain}</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/Laravel-Students-Apply/blob/main/login.jpg?raw=true" alt="capture">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/Laravel-Students-Apply/blob/main/about.jpg?raw=true" alt="capture">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/Laravel-Students-Apply/blob/main/send_feedback.jpg?raw=true" alt="capture">
+                    </div>
+                    <a href="" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+
+
+            <div class="project" id="project4">
+                <h2><i class="fas fa-folder-open"></i> Flutter Note</h2>
+                <p>C'est une application mobile qui permet de sauvegarder des notes</p>
+                <button class="toggle-button" onclick="toggleDescription('project4')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>L'application permet a l'utilisateur dee creer un compte et de sauvegarder des notes. Elle a été réalisée avec deux modes de fonctionnement Flutter/Firebase et Flutter/ExpressJs.</p>
+                    <p id="utils">Outils = { Flutter, Firebase, NodeJs, ExpressJs, JavaScript}</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/Flutter_Note/raw/main/maxresdefault.jpg" alt="capture">
+                    </div>
+                    <a href="https://github.com/gallas-ng/Flutter_Note" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+
+            <div class="project" id="project11">
+                <h2><i class="fas fa-folder-open"></i> Design  Mobile</h2>
+                <p>C'est un design d'une application mobile de services médicales</p>
+                <button class="toggle-button" onclick="toggleDescription('project11')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>Ce design a été réalisé avec Figma.</p>
+                    <p id="utils">Outils = { Figma}</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://i.pinimg.com/originals/81/03/10/8103100f5e05806ff60dae0a2ac45e0b.jpg" alt="capture">
+                    </div>
+                    <a href="https://www.figma.com/proto/ykoHFtrJiUW0cak88EjTgY/Mobile?node-id=9-318&scaling=scale-down&page-id=0%3A1&mode=design&t=TzXX3Tpp1Vw3Zf3P-1" target="_blank" ><i class="fas fa-pen-nib"></i>Lien Figma</a>
+                </div>
+            </div>
+            
+            <div class="project" id="project5">
+                <h2><i class="fas fa-folder-open"></i> Tech Booster</h2>
+                <p>Tech Booster est une plateforme web de candidature à des formations.</p>
+                <button class="toggle-button" onclick="toggleDescription('project5')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>Dans ce projet on a la possibilité de candidater à des formations et d'en faire la suivie. Il a été réalisé avec le framework Laravel.</p>
+                    <p id="utils">Outils = { Blade, PHP, JavaScript, CSS, SCSS, Vite.js, Webpack, Mustache }</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/Laravel-Students-Apply/raw/main/home.jpg" alt="capture">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/Laravel-Students-Apply/blob/main/capture.jpg?raw=true" alt="capture">
+                    </div>
+                    <a href="https://github.com/gallas-ng/Laravel-Students-Apply" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+
+            <div class="project" id="project6">
+                <h2><i class="fas fa-folder-open"></i> Django Blog</h2>
+                <p>C'est une application de blog</p>
+                <button class="toggle-button" onclick="toggleDescription('project6')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>L'application permet a l'utilisateur dee creer un compte et de pouvoir créer des sujets de blog. Au niveau de ces sujets on peut des posts faits par d'autres utilisateurs ainsi que des discussions. Elle a été réalisée avec Django.</p>
+                    <p id="utils">Outils = { Python, Django}</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/Django-Blog-App/raw/main/home.jpg" alt="capture">
+                    </div>
+                    <a href="https://github.com/gallas-ng/Django-Blog-App" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+
+            <div class="project" id="project7">
+                <h2><i class="fas fa-folder-open"></i> Student team Management</h2>
+                <p>C'est une application de création de groupes d'étudiants</p>
+                <button class="toggle-button" onclick="toggleDescription('project7')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>L'application permet de sauvegarder les étudiants ensuite elle réalise une repartition en plusieurs équipes des étudiants. Elle a été réalisée avec Angular et Spring boot. L'application a aussi été integrée dans une chaine CI/CD (Devops).</p>
+                    <p id="utils">Outils = { Typescript, Java, SpringBoot, Angular, Jenkins, Docker, Sonarqube, Ansible, Nexus}</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://static.javatpoint.com/sppages/angular/images/spring-angular-crud-application9.png" alt="capture">
+                    </div>
+                    <a href="https://github.com/gallas-ng/Projet-springboot-Angular" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+
+            <div class="project" id="project8">
+                <h2><i class="fas fa-folder-open"></i> Student Management (Python)</h2>
+                <p>C'est une application de gestion des étudiants</p>
+                <button class="toggle-button" onclick="toggleDescription('project8')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>L'application permet de gerer la base de données d'étudiants. Elle a été réalisée avec Tkinter.</p>
+                    <p id="utils">Outils = { Python, TKinter}</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/Python-Tkinter-App-/raw/master/tkinter.jpg" alt="capture">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/Python-Tkinter-App-/raw/master/auth.jpg" alt="capture">
+                    </div>
+                    <a href="https://github.com/gallas-ng/Python-Tkinter-App-" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+
+            <div class="project" id="project9">
+                <h2><i class="fas fa-folder-open"></i> Student Management (JavaFx)</h2>
+                <p>C'est une application de gestion des étudiants</p>
+                <button class="toggle-button" onclick="toggleDescription('project9')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>L'application permet de gerer la base de données d'étudiants. Elle a été réalisée avec JavaFx.</p>
+                    <p id="utils">Outils = { Java, JavaFx}</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/demo-javafx/raw/main/conn.jpg" alt="capture">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/demo-javafx/raw/main/students.jpg" alt="capture">
+                    </div>
+                    <a href="https://github.com/gallas-ng/demo-javafx" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+
+
+            <div class="project" id="project10">
+                <h2><i class="fas fa-folder-open"></i> Student Management (JavaEE)</h2>
+                <p>C'est une application de gestion des étudiants</p>
+                <button class="toggle-button" onclick="toggleDescription('project10')">Afficher/Masquer la description</button>
+                <div class="description">
+                    <p>L'application permet de gerer la base de données d'étudiants. Elle a été réalisée avec JavaEE.</p>
+                    <p id="utils">Outils = { Java, JavaEE, glassfish}</p>
+                    <div class="image-container">
+                        <img class="zoom-image" src="https://github.com/gallas-ng/DemoJavaEE/raw/main/index.jpg" alt="capture">
+                    </div>
+                    <a href="https://github.com/gallas-ng/DemoJavaEE" target="_blank" ><i class="fab fa-github"></i>Lien GitHub</a>
+                </div>
+            </div>
+
+
+            <div class="project" id="project12">
+                <h2><i class="fas fa-folder-open"></i> Loading <i class="fa fa-spinner fa-spin"></i></h2>
+                <h2>. . . . . . . . . . <i class="fas fa-skating" style="font-size: 30px;"></i> Je m'améliore !!!</h2>
+                
+            </div>
+
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Ce n'est pas tout ! Consultez mon profil GitHub pour voir plus de projets :</p>
+        <a href="https://github.com/gallas-ng" target="_blank"><i class="fab fa-github"></i>  Voir plus sur GitHub</a>
+    </footer>
+</body>
+</html>
